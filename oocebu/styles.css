@@ -1,0 +1,112 @@
+body { 
+    background-color: #0a0a0a; 
+    color: #e5e5e5; 
+    scroll-behavior: smooth; 
+}
+
+/* Mobile: Apply solid background colors to body and sections */
+@media (max-width: 767px) {
+    body {
+        background-color: #000000;
+        min-height: 100vh;
+    }
+    
+    /* Remove margin-bottom from header on mobile */
+    header {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Article Body Section - Mobile Solid Background */
+    .article-body-mobile {
+        background-color: #000000;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Remove top spacing from editorial-content on mobile */
+    .article-body-mobile .editorial-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    .article-body-mobile .editorial-content > p:first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Remove dropcap padding-top on mobile */
+    .article-body-mobile .dropcap::first-letter {
+        padding-top: 0 !important;
+    }
+    
+    
+    /* Related Articles Section - Mobile Solid Background */
+    .related-articles-mobile {
+        background-color: #000000 !important;
+    }
+    
+    /* Footer - Mobile Solid Background */
+    .footer-mobile {
+        background-color: #000000 !important;
+    }
+    
+    /* Glassmorphism Overlay - Transparent with Blur */
+    .glassmorphism-overlay {
+        background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.8) 85%, rgba(0,0,0,0.95) 95%, #000000 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        mask-image: linear-gradient(to bottom, transparent, black 25%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 25%);
+        box-shadow: 0 -20px 40px rgba(0,0,0,0.5);
+    }
+}
+
+.dropcap::first-letter {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 10vw, 6rem);
+    float: left;
+    line-height: 0.85;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    color: var(--category-color, #ffffff);
+}
+
+.editorial-content p { 
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin-bottom: 2rem; 
+    line-height: 1.85; 
+    font-size: 1.15rem; 
+    color: rgba(255,255,255,0.85);
+}
+
+/* Dynamic Category Color Mapping */
+.cat-coolinary { --category-color: #f97316; }
+.cat-hootspots { --category-color: #06b6d4; }
+.cat-snoopshots { --category-color: #ec4899; }
+.cat-commerce { --category-color: #3b82f6; }
+.cat-flow { --category-color: #ffffff; }
+.cat-community { --category-color: #10b981; }
+.cat-holistic { --category-color: #14b8a6; }
+.cat-coolture { --category-color: #ef4444; }
+.cat-profiles { --category-color: #f59e0b; }
+.cat-students { --category-color: #6366f1; }
+.cat-council { --category-color: #64748b; }
+.cat-global { --category-color: #ec4899; }
+
+#progress-bar {
+    height: 3px;
+    background: var(--category-color, #ffffff);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    z-index: 100;
+    transition: width 0.1s ease-out;
+}
+

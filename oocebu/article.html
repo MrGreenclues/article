@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['PT Serif', 'serif'],
+                    },
+                    colors: {
+                        'mag-dark': '#0a0a0a',
+                        'mag-card': '#111111',
+                        'mag-accent': '#10b981', 
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Kedebideri:wght@400;500;600;700;800;900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased">
+
+    <div id="progress-bar"></div>
+
+    <!-- Navigation - Desktop -->
+    <nav class="hidden md:flex fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/5 px-6 py-4">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center w-full">
+            <a href="home.html" class="text-white font-black text-xl tracking-tighter uppercase">
+                CC<span class="text-mag-accent">.</span>MAG
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-white transition">Menu</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back Button and Logo - Mobile -->
+    <div class="md:hidden fixed top-0 w-full z-50 bg-black px-5 py-4">
+        <div class="flex items-center justify-between max-w-[430px] mx-auto">
+            <a href="home.html" class="inline-flex items-center gap-2 text-white hover:text-white/80 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="text-sm font-bold">Back</span>
+            </a>
+            <a href="home.html" class="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-2">
+                <div class="flex items-center gap-1">
+                    <div class="w-6 h-6 bg-white rounded-full"></div>
+                    <div class="w-6 h-6 bg-white rounded-full"></div>
+                </div>
+                <span class="text-white font-black text-lg tracking-tight uppercase">CEBU</span>
+            </a>
+            <div class="w-16"></div> <!-- Spacer for centering -->
+        </div>
+    </div>
+
+    <main class="cat-flow"> <!-- Dynamic Category Class -->
+
+        <!-- 2. Article Hero Section -->
+        <header class="max-w-screen-lg mx-auto px-6 pt-20 md:pt-8 md:py-24 relative">
+            <!-- Mobile: Single Container Wrapper -->
+            <div class="md:hidden -mx-6 w-screen" style="bottom: -2rem; background-color: #000000; width: 100vw; margin-top: -5rem; min-height: 100vh;">
+                <!-- Image and Overlay Container -->
+                <div class="relative overflow-hidden" style="width: 100%; height: 90vh; min-height: 100vh;">
+                    <!-- Image as Background Layer -->
+                    <img src="assets/floow/street1.webp" alt="Street Art Mural" class="w-full" style="height: 80%; object-fit: cover; object-position: center 20%; display: block;">
+                    
+                    <!-- Top Shadow Gradient -->
+                    <div class="absolute top-0 left-0 right-0" style="height: 54%; background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 15%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 70%, transparent 100%); z-index: 10; pointer-events: none;"></div>
+                    
+                    <!-- Glassmorphism Overlay at Bottom -->
+                    <div class="glassmorphism-overlay absolute bottom-0 left-0 right-0 flex flex-col justify-end" style="height: 50%; padding: 20px; padding-bottom: 120px; z-index: 10;">
+                        <!-- Text Content Wrapper -->
+                        <div style="width: 100%; margin-bottom: -90px; position: relative; z-index: 20;">
+                            <!-- Metadata Row and Title Container -->
+                            <div class="flex flex-col" style="padding-top: 20px; margin-bottom: 16px;">
+                                <!-- Metadata Row -->
+                                <div class="flex items-center justify-start space-x-3 mb-4 text-[10px] font-semibold uppercase" style="color: #ffffff; letter-spacing: 0.15em;">
+                                    <span style="border: 1px solid #ffffff; border-radius: 9999px; padding: 4px 12px; color: #ffffff; letter-spacing: 0.1em;">EDITORIAL</span>
+                                    <span style="color: #ffffff;">JAN 10, 2026</span>
+                                    <span style="color: #ffffff;">12 MIN READ</span>
+                                </div>
+                                
+                                <!-- Title -->
+                                <h1 class="leading-tight text-left" style="font-size: clamp(1.5rem, 8vw, 1.875rem); font-weight: bold; font-style: italic; color: #ffffff;">
+                                    The Pulse of the Underground.
+                                </h1>
+                            </div>
+                            
+                            <!-- Description -->
+                            <p class="leading-relaxed mb-4 text-left" style="font-size: clamp(0.875rem, 3.5vw, 1rem); font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #ffffff;">
+                                A deep dive into Cebu's resurgent street art scene and the creative collectives reclaiming the concrete canvas.
+                            </p>
+                            
+                            <!-- Author Block with 2px white vertical line -->
+                            <div class="mt-4 flex items-start" style="display: flex; border-left: 2px solid #ffffff; padding-left: 10px;">
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] font-semibold uppercase tracking-widest mb-1" style="color: #ffffff;">AUTHOR</span>
+                                    <span class="font-bold" style="font-size: 1rem; color: #ffffff;">Carlos Verde</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Cover Media -->
+            <div class="mb-12 relative group">
+                <div class="hidden md:block aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 relative">
+                    <div class="absolute inset-0 flex items-center justify-center text-white/5 font-black text-6xl italic">Cover Media</div>
+                    <div class="hidden md:block absolute bottom-6 left-6 bg-black/80 backdrop-blur-md px-4 py-2 border border-white/10 rounded-lg text-[10px] uppercase font-bold tracking-widest text-white/60">
+                        Feature Image / Cover Media
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Content -->
+            <div class="hidden md:flex text-left flex-col md:flex-row items-end gap-8 relative z-10">
+                <div class="flex-1">
+                    <div class="flex items-center justify-start space-x-4 mb-6 text-[9px] font-black uppercase tracking-widest text-white/40">
+                        <span class="px-2 py-0.5 border border-[var(--category-color)] text-[var(--category-color)] rounded">Editorial</span>
+                        <span>Jan 10, 2026</span>
+                        <span>12 Min Read</span>
+                    </div>
+                    <h1 class="text-sm md:text-2xl font-black text-white mb-4 tracking-tight leading-[1.1] italic md:tracking-tight" style="font-size: clamp(0.875rem, 4vw, 2rem); max-width: 100%;">
+                        The Pulse of the Underground.
+                    </h1>
+                    <p class="text-xs md:text-sm font-serif italic text-white/50 leading-relaxed" style="line-height: 1.5; max-width: 20rem; font-size: clamp(0.75rem, 2.8vw, 0.875rem);">
+                        A deep dive into Cebu's resurgent street art scene and the creative collectives reclaiming the concrete canvas.
+                    </p>
+                </div>
+                <div class="hidden lg:block pb-2">
+                    <div class="flex flex-col items-end border-r-2 border-[var(--category-color)] pr-6">
+                        <span class="text-[9px] font-black uppercase tracking-widest text-white/30 mb-1">Author</span>
+                        <span class="text-white font-bold text-base">Carlos Verde</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 3. Article Body & 4. Media Section -->
+        <div class="max-w-screen-md mx-auto mb-24 md:pt-0 article-body-mobile" style="padding-left: 20px; padding-right: 20px; max-width: 430px; margin-top: 0; position: relative; z-index: 10;">
+            <div class="editorial-content" style="margin-top: 0; padding-top: 0;">
+                <p class="dropcap">
+                    The grey monoliths of Cebu's industrial past are finding a new purpose. Not as factories, but as canvases for a resurgent creative class that refuses to be ignored. Under the moniker of <strong>flOOw</strong>, a loose collective of artists is turning the city's periphery into an open-air museum.
+                </p>
+
+                <!-- Media Block: Video Embed Mockup -->
+                <div class="my-16 aspect-video bg-zinc-900 rounded-2xl border border-white/10 flex flex-col items-center justify-center group cursor-pointer relative">
+                    <div class="w-16 h-16 rounded-full bg-[var(--category-color)] flex items-center justify-center pl-1 group-hover:scale-110 transition">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    </div>
+                    <span class="mt-4 text-[10px] font-black uppercase tracking-widest text-white/40">Watch Visual Documentary</span>
+                </div>
+
+                <p>
+                    It began in the quiet corners of Mandaue—a few spray-painted murals on abandoned warehouses. This movement is rooted in the heritage of the island but executed with a global edge. 
+                </p>
+
+                <!-- Media Block: Image Gallery (Photo Essay) -->
+                <div class="grid grid-cols-2 gap-4 my-16">
+                    <div class="aspect-square bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center text-white/5 text-[10px] font-black uppercase">Gallery Image 1</div>
+                    <div class="aspect-square bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center text-white/5 text-[10px] font-black uppercase">Gallery Image 2</div>
+                </div>
+
+                <!-- Pull Quote -->
+                <aside class="my-16 py-12 border-y border-white/5 text-center">
+                    <blockquote class="text-3xl md:text-5xl font-black text-white italic leading-tight mb-4">
+                        "The city is our gallery, and every citizen is an invited guest."
+                    </blockquote>
+                    <cite class="text-[10px] uppercase tracking-widest text-[var(--category-color)] font-black">— Marcus Graff, Collective Founder</cite>
+                </aside>
+
+                <p>
+                    As we look toward the future, the underground scene documented by flOOw provides a roadmap for Cebu's contemporary identity.
+                </p>
+            </div>
+
+            <!-- 5. Tags / Topics -->
+            <div class="mt-16 pt-8 border-t border-white/5">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-white/20 mb-6">Related Topics</h4>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#" class="px-4 py-2 bg-zinc-900 rounded-lg text-[10px] font-bold text-white/60 hover:text-[var(--category-color)] border border-white/5 transition">#CebuArts</a>
+                    <a href="#" class="px-4 py-2 bg-zinc-900 rounded-lg text-[10px] font-bold text-white/60 hover:text-[var(--category-color)] border border-white/5 transition">#StreetCulture</a>
+                    <a href="#" class="px-4 py-2 bg-zinc-900 rounded-lg text-[10px] font-bold text-white/60 hover:text-[var(--category-color)] border border-white/5 transition">#FlowMagazine</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Author Profile -->
+        <section class="max-w-screen-md mx-auto px-6 md:px-8 mb-16 md:mb-24">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-zinc-800 border-2 border-[var(--category-color)] flex-shrink-0"></div>
+                <div class="text-center md:text-left w-full">
+                    <h3 class="text-lg md:text-xl font-black text-white mb-3 md:mb-2 tracking-tight">Carlos Verde</h3>
+                    <p class="text-sm md:text-sm text-white/50 mb-6 md:mb-6 leading-relaxed">
+                        Carlos is a cultural critic and visual storyteller focused on urban development and the underground art scenes of Southeast Asia. He has been documenting Cebu's streets for over a decade.
+                    </p>
+                    <a href="#" class="inline-flex items-center justify-center md:justify-start text-[10px] font-black uppercase tracking-widest text-[var(--category-color)] hover:underline underline-offset-4">
+                        View more articles by Carlos <svg class="ml-2 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Navigation (Prev/Next) -->
+        <nav class="max-w-screen-xl mx-auto px-6 border-t border-white/5 py-12 flex justify-between items-center group">
+            <a id="prev-story-link" href="#" class="flex flex-col items-start gap-2 hover:translate-x-[-8px] transition">
+                <span class="text-[10px] font-black uppercase tracking-widest text-white/20">Previous Story</span>
+                <span id="prev-story-title" class="text-sm font-bold text-white group-hover:text-[var(--category-color)] max-w-[150px] md:max-w-xs truncate">The Alchemist of Street Food: New Trends in Colon</span>
+            </a>
+            <div class="h-10 w-[1px] bg-white/5"></div>
+            <a href="#" class="flex flex-col items-end gap-2 text-right hover:translate-x-[8px] transition">
+                <span class="text-[10px] font-black uppercase tracking-widest text-white/20">Next Story</span>
+                <span class="text-sm font-bold text-white group-hover:text-[var(--category-color)] max-w-[150px] md:max-w-xs truncate">Hidden Coves: A Guide to Bantayan's Secret North</span>
+            </a>
+        </nav>
+
+        <!-- 7. Related Articles -->
+        <section class="md:bg-zinc-900/30 py-24 border-t border-white/5 related-articles-mobile">
+            <div class="max-w-screen-xl mx-auto px-6">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h4 class="text-[var(--category-color)] text-[10px] font-black uppercase tracking-[0.4em] mb-4">Discovery</h4>
+                        <h2 class="text-3xl font-black text-white tracking-tighter italic uppercase">You Might Like</h2>
+                    </div>
+                    <a href="home.html" class="text-[10px] font-black uppercase tracking-widest text-white/40 hover:text-white transition">Back to category</a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <a href="coolinary.html?from=article&prevTitle=The Pulse of the Underground." class="group cursor-pointer">
+                        <div class="aspect-[16/10] bg-zinc-800 mb-6 rounded-xl overflow-hidden border border-white/5 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-white/5 font-black uppercase group-hover:scale-110 transition duration-500">Related Post</div>
+                        </div>
+                        <p class="text-[10px] text-orange-500 font-black uppercase tracking-[0.2em] mb-3">cOOlinary</p>
+                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition leading-tight">The Heritage of Puso.</h3>
+                    </a>
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[16/10] bg-zinc-800 mb-6 rounded-xl overflow-hidden border border-white/5 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-white/5 font-black uppercase group-hover:scale-110 transition duration-500">Related Post</div>
+                        </div>
+                        <p class="text-[10px] text-pink-500 font-black uppercase tracking-[0.2em] mb-3">glOObal</p>
+                        <h3 class="text-lg font-bold text-white group-hover:text-pink-500 transition leading-tight">Integrating Hearts: The Growing Korean Hub</h3>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[16/10] bg-zinc-800 mb-6 rounded-xl overflow-hidden border border-white/5 relative">
+                            <div class="absolute inset-0 flex items-center justify-center text-white/5 font-black uppercase group-hover:scale-110 transition duration-500">Related Post</div>
+                        </div>
+                        <p class="text-[10px] text-yellow-500 font-black uppercase tracking-[0.2em] mb-3">prOOfiles</p>
+                        <h3 class="text-lg font-bold text-white group-hover:text-yellow-500 transition leading-tight">The Visionary Building Cebu's Next Big Unicorn</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="md:bg-black py-20 px-6 border-t border-white/5 footer-mobile">
+        <div class="max-w-screen-xl mx-auto flex flex-col items-center text-center">
+            <div class="text-5xl font-black text-white tracking-tighter mb-10 italic">CC.MAG<span class="text-[var(--category-color)]">.</span></div>
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-16 text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
+                <a href="#" class="hover:text-white transition">Archives</a>
+                <a href="#" class="hover:text-white transition">Submissions</a>
+                <a href="#" class="hover:text-white transition">Ethics Policy</a>
+                <a href="#" class="hover:text-white transition">Creative Hub</a>
+            </div>
+            <p class="text-[10px] text-white/10 uppercase font-black tracking-widest">&copy; 2026 Creatives Center Editorial.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update Previous Story based on referrer
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fromPage = urlParams.get('from');
+            const prevTitle = urlParams.get('prevTitle');
+            
+            // Check if we came from coolinary.html
+            if (fromPage === 'coolinary' || document.referrer.includes('coolinary.html')) {
+                const prevLink = document.getElementById('prev-story-link');
+                const prevTitleEl = document.getElementById('prev-story-title');
+                
+                if (prevLink && prevTitleEl) {
+                    prevLink.href = 'coolinary.html';
+                    prevTitleEl.textContent = prevTitle || 'The Heritage of Puso.';
+                }
+            }
+        })();
+
+        // Progress Bar logic
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const b = document.body;
+            const st = 'scrollTop';
+            const sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            document.getElementById('progress-bar').style.width = percent + '%';
+        });
+    </script>
+</body>
+</html>
